@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "positi",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "linuxAndroidStudioPath": "/usr/local/android-studio/bin/studio.sh"
+}

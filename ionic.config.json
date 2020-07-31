@@ -1,0 +1,7 @@
+{
+  "name": "positi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
