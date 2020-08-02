@@ -14,7 +14,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Positi</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
