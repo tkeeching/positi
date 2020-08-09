@@ -1,0 +1,9 @@
+.header__title {
+  display: inline-flex;
+  padding-right: 14px;
+  align-items: center;
+
+  > * + * {
+    margin-left: 2px;
+  }
+}

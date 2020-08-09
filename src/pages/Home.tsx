@@ -1,28 +1,12 @@
 import React from "react";
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonButton,
-} from "@ionic/react";
+import { IonContent, IonPage, IonButton } from "@ionic/react";
 import "./Home.scss";
-import Logo from "../components/Logo";
+import Header from "../components/Header";
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>
-            <span className="home__header-title">
-              <Logo size={30} />
-              OSITI
-            </span>
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header />
       <IonContent>
         <IonButton routerLink="/compliment-me">Compliment me</IonButton>
         <IonButton routerLink="/inspire-me">Inspire me</IonButton>
