@@ -2,6 +2,7 @@
   display: inline-flex;
   padding-right: 14px;
   align-items: center;
+  cursor: pointer;
 
   > * + * {
     margin-left: 2px;
