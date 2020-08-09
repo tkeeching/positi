@@ -27,9 +27,9 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import "./theme/fonts.css";
-import "./theme/variables.css";
-import "./theme/theme.css";
+import "./theme/fonts.scss";
+import "./theme/variables.scss";
+import "./theme/theme.scss";
 
 import { initialise } from "./utils/initialise";
 
