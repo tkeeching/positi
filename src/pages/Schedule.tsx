@@ -1,15 +1,17 @@
 import React from "react";
-import { IonContent, IonPage } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
+import { IonContent, IonPage, IonButton } from "@ionic/react";
 import "./Schedule.scss";
 import Header from "../components/Header";
+import { HOME_PATH } from "../App";
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
       <Header />
       <IonContent>
-        <ExploreContainer name="Tab 1 page" />
+        <IonButton expand="block" routerLink={HOME_PATH}>
+          Home
+        </IonButton>
       </IonContent>
     </IonPage>
   );

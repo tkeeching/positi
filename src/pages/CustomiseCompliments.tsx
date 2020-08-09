@@ -1,18 +1,50 @@
 import React from "react";
-import { IonContent, IonPage } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
+import {
+  IonContent,
+  IonPage,
+  IonList,
+  IonItemSliding,
+  IonItemOptions,
+  IonItemOption,
+  IonItem,
+  IonLabel,
+  IonButton,
+} from "@ionic/react";
 import "./CustomiseCompliments.scss";
 import Header from "../components/Header";
+import { HOME_PATH } from "../App";
 
-const Tab1: React.FC = () => {
+const CustomiseCompliments: React.FC = () => {
+  const compliments = ["You look great today.", "You feel fantastic today."];
+
   return (
     <IonPage>
       <Header />
       <IonContent>
-        <ExploreContainer name="Tab 1 page" />
+        <IonList>
+          {compliments.map((compliment, index) => (
+            <IonItemSliding key={index}>
+              <IonItem>
+                <IonLabel>{compliment}</IonLabel>
+              </IonItem>
+
+              <IonItemOptions side="end">
+                <IonItemOption
+                  color="danger"
+                  onClick={() => console.log("Delete")}
+                >
+                  Delete
+                </IonItemOption>
+              </IonItemOptions>
+            </IonItemSliding>
+          ))}
+        </IonList>
+        <IonButton expand="block" routerLink={HOME_PATH}>
+          Home
+        </IonButton>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default CustomiseCompliments;
