@@ -8,13 +8,19 @@ import {
   IonButton,
 } from "@ionic/react";
 import "./Home.scss";
+import Logo from "../components/Logo";
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Positi</IonTitle>
+          <IonTitle>
+            <span className="home__header-title">
+              <Logo size={30} />
+              OSITI
+            </span>
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

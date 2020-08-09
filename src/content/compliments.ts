@@ -18,6 +18,5 @@ export const compliments = [
   "You're more fun than bubble wrap.",
   "You're like a breath of fresh air.",
   "You're someone's reason to smile.",
- " How do you keep being so funny and making everyone laugh?"
-
-]
+  "How do you keep being so funny and making everyone laugh?",
+];
