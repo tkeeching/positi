@@ -50,6 +50,7 @@ const App: React.FC = () => {
         console.log("value: ", value);
         if (value === null) {
           set("positi.initialised", "true");
+          set("compliment", "you are beautiful");
           initialise();
         }
       });
