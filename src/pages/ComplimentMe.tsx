@@ -4,12 +4,20 @@ import "./ComplimentMe.scss";
 import Header from "../components/Header";
 import { HOME_PATH } from "../App";
 import { Plugins } from "@capacitor/core";
+import styled from "styled-components";
 
 const { Storage } = Plugins;
+  
+// Styled Components
+const StyledIonText = styled(IonText)`
+  display: block;
+  padding: 100px 30px;
+  font-size: 1.5rem;
+`;
 
 const ComplimentMe: React.FC = () => {
-  const [index, setIndex] = useState(0);
   const [compliments, setCompliments] = useState<string[]>([]);
+  const [index, setIndex] = useState(Math.floor(Math.random() * 10));
 
   const fetchData = async () => {
     const storageData = await Storage.get({ key: "data" });
@@ -22,11 +30,13 @@ const ComplimentMe: React.FC = () => {
     fetchData();
   }, [compliments])
 
+
+
   return (
     <IonPage>
       <Header />
       <IonContent>
-        <IonText>{compliments[index]}</IonText>
+        <StyledIonText>{compliments[index]}</StyledIonText>
         <IonButton
           expand="block"
           onClick={() => {
