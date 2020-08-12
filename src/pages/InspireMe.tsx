@@ -1,21 +1,40 @@
 import React, { useState } from "react";
-import { IonContent, IonPage, IonText, IonButton } from "@ionic/react";
+import {
+  IonContent,
+  IonPage,
+  IonText,
+  IonButton,
+  useIonViewWillEnter,
+} from "@ionic/react";
 import Header from "../components/Header";
+import { Plugins } from "@capacitor/core";
 import { HOME_PATH } from "../App";
+import styled from "styled-components";
+
+const { Storage } = Plugins;
 
 const InspireMe: React.FC = () => {
-  const inspirations = ["There is no spoon.", "There is no place like home."];
-  const [index, setIndex] = useState(0);
+  const [quotes, setQuotes] = useState<string[]>([]);
+  console.log("quotes: ", quotes);
+  const [index, setIndex] = useState<number>();
+
+  useIonViewWillEnter(async () => {
+    const storageData = await Storage.get({ key: "data" });
+    const quotes =
+      storageData.value === null ? [] : JSON.parse(storageData.value).quotes;
+    setQuotes(quotes);
+    setIndex(Math.floor(Math.random() * quotes.length));
+  }, []);
 
   return (
     <IonPage>
       <Header />
       <IonContent>
-        <IonText>{inspirations[index]}</IonText>
+        <StyledIonText>{index && quotes[index]}</StyledIonText>
         <IonButton
           expand="block"
           onClick={() => {
-            setIndex(index === 0 ? 1 : 0);
+            setIndex(Math.floor(Math.random() * quotes.length));
           }}
         >
           Give me more
@@ -27,5 +46,11 @@ const InspireMe: React.FC = () => {
     </IonPage>
   );
 };
+
+const StyledIonText = styled(IonText)`
+  display: block;
+  padding: 100px 30px;
+  font-size: 1.5rem;
+`;
 
 export default InspireMe;

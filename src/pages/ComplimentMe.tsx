@@ -15,26 +15,23 @@ const { Storage } = Plugins;
 
 const ComplimentMe: React.FC = () => {
   const [compliments, setCompliments] = useState<string[]>([]);
-  const [index, setIndex] = useState(Math.floor(Math.random() * 10));
+  const [index, setIndex] = useState<number>();
 
-  const fetchData = async () => {
+  useIonViewWillEnter(async () => {
     const storageData = await Storage.get({ key: "data" });
     const compliments =
       storageData.value === null
         ? []
         : JSON.parse(storageData.value).compliments;
     setCompliments(compliments);
-  };
-
-  useIonViewWillEnter(() => {
-    fetchData();
-  }, [compliments]);
+    setIndex(Math.floor(Math.random() * compliments.length));
+  }, []);
 
   return (
     <IonPage>
       <Header />
       <IonContent>
-        <StyledIonText>{compliments[index]}</StyledIonText>
+        <StyledIonText>{index && compliments[index]}</StyledIonText>
         <IonButton
           expand="block"
           onClick={() => {
