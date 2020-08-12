@@ -1,6 +1,5 @@
 import React from "react";
 import { IonContent, IonPage, IonButton } from "@ionic/react";
-import "./Home.scss";
 import Header from "../components/Header";
 import {
   COMPLIMENT_ME_PATH,

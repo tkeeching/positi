@@ -1,6 +1,5 @@
 import React from "react";
 import { IonContent, IonPage, IonButton } from "@ionic/react";
-import "./Schedule.scss";
 import Header from "../components/Header";
 import { HOME_PATH } from "../App";
 

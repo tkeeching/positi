@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { IonContent, IonPage, IonText, IonButton, useIonViewWillEnter } from "@ionic/react";
-import "./ComplimentMe.scss";
+import React, { useState } from "react";
+import {
+  IonContent,
+  IonPage,
+  IonText,
+  IonButton,
+  useIonViewWillEnter,
+} from "@ionic/react";
 import Header from "../components/Header";
 import { HOME_PATH } from "../App";
 import { Plugins } from "@capacitor/core";
 import styled from "styled-components";
 
 const { Storage } = Plugins;
-  
-// Styled Components
-const StyledIonText = styled(IonText)`
-  display: block;
-  padding: 100px 30px;
-  font-size: 1.5rem;
-`;
 
 const ComplimentMe: React.FC = () => {
   const [compliments, setCompliments] = useState<string[]>([]);
@@ -22,15 +20,15 @@ const ComplimentMe: React.FC = () => {
   const fetchData = async () => {
     const storageData = await Storage.get({ key: "data" });
     const compliments =
-      storageData.value === null ? [] : JSON.parse(storageData.value).compliments;
+      storageData.value === null
+        ? []
+        : JSON.parse(storageData.value).compliments;
     setCompliments(compliments);
   };
-  
-  useIonViewWillEnter( () => {
+
+  useIonViewWillEnter(() => {
     fetchData();
-  }, [compliments])
-
-
+  }, [compliments]);
 
   return (
     <IonPage>
@@ -52,5 +50,11 @@ const ComplimentMe: React.FC = () => {
     </IonPage>
   );
 };
+
+const StyledIonText = styled(IonText)`
+  display: block;
+  padding: 100px 30px;
+  font-size: 1.5rem;
+`;
 
 export default ComplimentMe;

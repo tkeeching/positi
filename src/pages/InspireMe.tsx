@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { IonContent, IonPage, IonText, IonButton } from "@ionic/react";
-import "./InspireMe.scss";
 import Header from "../components/Header";
 import { HOME_PATH } from "../App";
 

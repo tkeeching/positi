@@ -10,7 +10,6 @@ import {
   IonLabel,
   IonButton,
 } from "@ionic/react";
-import "./CustomiseCompliments.scss";
 import Header from "../components/Header";
 import { HOME_PATH } from "../App";
 
