@@ -17,6 +17,8 @@ const ComplimentMe: React.FC = () => {
   const [compliments, setCompliments] = useState<string[]>([]);
   const [index, setIndex] = useState<number>();
 
+  const randomIndex = () => Math.floor(Math.random() * compliments.length);
+
   useIonViewWillEnter(async () => {
     const storageData = await Storage.get({ key: "data" });
     const compliments =
@@ -24,7 +26,9 @@ const ComplimentMe: React.FC = () => {
         ? []
         : JSON.parse(storageData.value).compliments;
     setCompliments(compliments);
-    setIndex(Math.floor(Math.random() * compliments.length));
+
+    const nextIndex = randomIndex();
+    setIndex(nextIndex === index ? randomIndex() : nextIndex);
   }, []);
 
   return (

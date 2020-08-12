@@ -18,12 +18,16 @@ const InspireMe: React.FC = () => {
   console.log("quotes: ", quotes);
   const [index, setIndex] = useState<number>();
 
+  const randomIndex = () => Math.floor(Math.random() * quotes.length);
+
   useIonViewWillEnter(async () => {
     const storageData = await Storage.get({ key: "data" });
     const quotes =
       storageData.value === null ? [] : JSON.parse(storageData.value).quotes;
     setQuotes(quotes);
-    setIndex(Math.floor(Math.random() * quotes.length));
+
+    const nextIndex = randomIndex();
+    setIndex(nextIndex === index ? randomIndex() : nextIndex);
   }, []);
 
   return (
