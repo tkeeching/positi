@@ -17,16 +17,16 @@ const ComplimentMe: React.FC = () => {
   const [compliments, setCompliments] = useState<string[]>([]);
   const [index, setIndex] = useState<number>();
 
-  const randomIndex = () => Math.floor(Math.random() * compliments.length);
-
+  
   useIonViewWillEnter(async () => {
     const storageData = await Storage.get({ key: "data" });
     const compliments =
-      storageData.value === null
-        ? []
-        : JSON.parse(storageData.value).compliments;
+    storageData.value === null
+    ? []
+    : JSON.parse(storageData.value).compliments;
     setCompliments(compliments);
-
+    
+    const randomIndex = () => Math.floor(Math.random() * compliments.length);
     const nextIndex = randomIndex();
     setIndex(nextIndex === index ? randomIndex() : nextIndex);
   }, []);
@@ -35,7 +35,7 @@ const ComplimentMe: React.FC = () => {
     <IonPage>
       <Header />
       <IonContent>
-        <StyledIonText>{index && compliments[index]}</StyledIonText>
+        <StyledIonText>{typeof index !== 'undefined' && compliments[index]}</StyledIonText>
         <IonButton
           expand="block"
           onClick={() => {

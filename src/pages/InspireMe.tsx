@@ -15,17 +15,16 @@ const { Storage } = Plugins;
 
 const InspireMe: React.FC = () => {
   const [quotes, setQuotes] = useState<string[]>([]);
-  console.log("quotes: ", quotes);
   const [index, setIndex] = useState<number>();
 
-  const randomIndex = () => Math.floor(Math.random() * quotes.length);
-
+  
   useIonViewWillEnter(async () => {
     const storageData = await Storage.get({ key: "data" });
     const quotes =
-      storageData.value === null ? [] : JSON.parse(storageData.value).quotes;
+    storageData.value === null ? [] : JSON.parse(storageData.value).quotes;
     setQuotes(quotes);
-
+    
+    const randomIndex = () => Math.floor(Math.random() * quotes.length);
     const nextIndex = randomIndex();
     setIndex(nextIndex === index ? randomIndex() : nextIndex);
   }, []);
@@ -34,7 +33,7 @@ const InspireMe: React.FC = () => {
     <IonPage>
       <Header />
       <IonContent>
-        <StyledIonText>{index && quotes[index]}</StyledIonText>
+        <StyledIonText>{typeof index !== 'undefined' && quotes[index]}</StyledIonText>
         <IonButton
           expand="block"
           onClick={() => {
