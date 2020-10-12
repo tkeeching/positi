@@ -17,16 +17,20 @@ const ScheduleSelection: React.FC = () => {
         : JSON.parse(storageData.value);
 
     const pendingList = await LocalNotifications.getPending();
-    await LocalNotifications.cancel({
-      notifications: pendingList.notifications,
-    });
+
+    if (pendingList.notifications.length > 0) {
+      await LocalNotifications.cancel({
+        notifications: pendingList.notifications,
+      });
+    }
 
     const dates = getDates(new Date(), time);
     const notifications = dates.map((date, index) => {
+      const nextIndex = Math.floor(Math.random() * data[`${category}`].length);
       return {
         id: index + 1,
-        title: `Positi - ${category} of the day`,
-        body: data[`${category}`][index],
+        title: `${category === 'quotes' ? 'Quote' : 'Compliment'} of the day`,
+        body: data[`${category}`][nextIndex],
         schedule: {
           at: date
         },
@@ -38,7 +42,7 @@ const ScheduleSelection: React.FC = () => {
     });
 
     // For development - uncomment to log scheduled notifications
-    console.log("scheduled notifications", notifs);
+    // console.log("scheduled notifications", notifs);
 
     setShowToast1(true);
   });
@@ -67,7 +71,7 @@ const ScheduleSelection: React.FC = () => {
         <IonToast
           isOpen={showToast1}
           onDidDismiss={() => setShowToast1(false)}
-          message={`${category ?? '(none)'} have been scheduled daily at ${time ?? '(none)'}`}
+          message={`${category === 'quotes' ? 'Quotes' : 'Compliments'} have been scheduled daily at ${time ?? '(none)'}`}
           duration={500}
         />
       </IonList>

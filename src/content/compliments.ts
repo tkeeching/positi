@@ -1,5 +1,4 @@
 export const compliments = [
-  "You are beautiful, I am beautiful, let's be beautiful together",
   "Your smile is contagious.",
   "I bet you make babies smile.",
   "You have the best laugh.",
@@ -37,5 +36,6 @@ export const compliments = [
   "If you were a scented candle they'd have to call it Perfectly Imperfect (and it would smell like summer).",
   "There's ordinary, and then there's you.",
   "You're even better than a unicorn because you're real.",
-  "You're really something special."
+  "You're really something special.",
+  "You are beautiful, I am beautiful, let's be beautiful together"
 ];
