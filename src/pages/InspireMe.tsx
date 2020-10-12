@@ -34,6 +34,8 @@ const InspireMe: React.FC = () => {
       <Header />
       <IonContent>
         <StyledIonText>{typeof index !== 'undefined' && quotes[index]}</StyledIonText>
+      </IonContent>
+      <IonContent>
         <IonButton
           expand="block"
           onClick={() => {
@@ -52,7 +54,7 @@ const InspireMe: React.FC = () => {
 
 const StyledIonText = styled(IonText)`
   display: block;
-  padding: 100px 30px;
+  padding: 80px 30px;
   font-size: 1.5rem;
 `;
 

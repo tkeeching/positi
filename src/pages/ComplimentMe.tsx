@@ -36,12 +36,14 @@ const ComplimentMe: React.FC = () => {
       <Header />
       <IonContent>
         <StyledIonText>{typeof index !== 'undefined' && compliments[index]}</StyledIonText>
+      </IonContent>
+      <IonContent>
         <IonButton
           expand="block"
           onClick={() => {
             setIndex(Math.floor(Math.random() * compliments.length));
           }}
-        >
+          >
           Give me more
         </IonButton>
         <IonButton expand="block" routerLink={HOME_PATH}>

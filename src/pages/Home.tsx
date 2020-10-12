@@ -13,6 +13,7 @@ const Tab1: React.FC = () => {
   return (
     <IonPage>
       <Header />
+      <IonContent></IonContent>
       <IonContent>
         <IonButton expand="block" routerLink={COMPLIMENT_ME_PATH}>
           Compliment me
@@ -20,12 +21,12 @@ const Tab1: React.FC = () => {
         <IonButton expand="block" routerLink={INSPIRE_ME_PATH}>
           Inspire me
         </IonButton>
-        <IonButton expand="block" routerLink={CUSTOMISE_COMPLIMENTS_PATH}>
+        {/* <IonButton expand="block" routerLink={CUSTOMISE_COMPLIMENTS_PATH}>
           Customise Compliments
         </IonButton>
         <IonButton expand="block" routerLink={CUSTOMISE_INSPIRATIONS_PATH}>
           Customise Inspirations
-        </IonButton>
+        </IonButton> */}
         <IonButton expand="block" routerLink={SCHEDULE_PATH}>
           Schedule
         </IonButton>
