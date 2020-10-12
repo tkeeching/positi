@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonButton, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonDatetime, IonToast, useIonViewWillEnter } from '@ionic/react';
+import { IonButton, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonDatetime, IonToast } from '@ionic/react';
 import { Plugins } from "@capacitor/core";
 import { getDates } from "../utils/getDates";
 const { LocalNotifications, Storage } = Plugins;
@@ -21,12 +21,11 @@ const ScheduleSelection: React.FC = () => {
       notifications: pendingList.notifications,
     });
 
-    console.log(category);
     const dates = getDates(new Date(), time);
     const notifications = dates.map((date, index) => {
       return {
         id: index + 1,
-        title: "Positi",
+        title: `Positi - ${category} of the day`,
         body: data[`${category}`][index],
         schedule: {
           at: date
@@ -38,6 +37,7 @@ const ScheduleSelection: React.FC = () => {
       notifications,
     });
 
+    // For development - uncomment to log scheduled notifications
     console.log("scheduled notifications", notifs);
 
     setShowToast1(true);
