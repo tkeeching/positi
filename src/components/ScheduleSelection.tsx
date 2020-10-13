@@ -72,7 +72,7 @@ const ScheduleSelection: React.FC = () => {
           isOpen={showToast1}
           onDidDismiss={() => setShowToast1(false)}
           message={`${category === 'quotes' ? 'Quotes' : 'Compliments'} have been scheduled daily at ${time ?? '(none)'}`}
-          duration={500}
+          duration={1000}
         />
       </IonList>
       <IonButton 
