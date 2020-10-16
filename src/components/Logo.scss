@@ -1,6 +1,8 @@
 .logo {
   border-radius: 50%;
-  background-color: purple;
+  // background-color: purple;
+  background-image: url(../images/positi_logo_512.png);
+  background-size: contain;
   display: grid;
   place-items: center;
 }
