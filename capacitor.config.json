@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "positi",
+  "appId": "io.ionic.positi",
+  "appName": "Positi",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
