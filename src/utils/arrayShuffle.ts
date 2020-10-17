@@ -16,5 +16,5 @@ export const arrayShuffle = (array: any[]) => {
     arrayCopy[randomIndex] = temporaryValue;
   }
 
-  return array;
+  return arrayCopy;
 };
