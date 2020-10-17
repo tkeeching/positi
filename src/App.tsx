@@ -9,6 +9,7 @@ import CustomiseCompliments from "./pages/CustomiseCompliments";
 import CustomiseInspirations from "./pages/CustomiseInspirations";
 import Schedule from "./pages/Schedule";
 import { useStorage } from "@capacitor-community/react-hooks/storage";
+import { Plugins } from "@capacitor/core";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -41,6 +42,8 @@ export const CUSTOMISE_COMPLIMENTS_PATH = "/customise-compliments";
 export const CUSTOMISE_INSPIRATIONS_PATH = "/customise-inspirations";
 export const SCHEDULE_PATH = "/schedule";
 
+const { LocalNotifications } = Plugins;
+
 const App: React.FC = () => {
   const { get, set } = useStorage();
 
@@ -54,6 +57,8 @@ const App: React.FC = () => {
           initialise();
         }
       });
+
+      LocalNotifications.requestPermission();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
