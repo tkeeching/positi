@@ -32,10 +32,10 @@ export const compliments = [
   "If you were a box of crayons, you'd be the big industrial name-brand one with a built-in sharpener.",
   "Who raised you? They deserve a medal for a job well done.",
   "Somehow you make time stop and fly all at the same time.",
-  "In high school, I bet you were voted \"most likely to continue being awesome\".",
+  'In high school, I bet you were voted "most likely to continue being awesome".',
   "If you were a scented candle they'd have to call it Perfectly Imperfect (and it would smell like summer).",
   "There's ordinary, and then there's you.",
   "You're even better than a unicorn because you're real.",
   "You're really something special.",
-  "You are beautiful, I am beautiful, let's be beautiful together"
+  "You are beautiful, I am beautiful, let's be beautiful together",
 ];

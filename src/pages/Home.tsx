@@ -1,13 +1,7 @@
 import React from "react";
 import { IonContent, IonPage, IonButton } from "@ionic/react";
 import Header from "../components/Header";
-import {
-  COMPLIMENT_ME_PATH,
-  INSPIRE_ME_PATH,
-  CUSTOMISE_COMPLIMENTS_PATH,
-  CUSTOMISE_INSPIRATIONS_PATH,
-  SCHEDULE_PATH,
-} from "../App";
+import { COMPLIMENT_ME_PATH, INSPIRE_ME_PATH, SCHEDULE_PATH } from "../App";
 
 const Tab1: React.FC = () => {
   return (
