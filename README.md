@@ -6,8 +6,7 @@
 
 Daily quotes and compliments to promote positivy.
 
-Try it on <a href="https://kee.dev/" target="_blank">Google Play</a>.
-Try it on <a href="https://kee.dev/" target="_blank">App Store</a>.
+Try it on <a href="https://kee.dev/" target="_blank">Google Play</a> | <a href="https://kee.dev/" target="_blank">App Store</a>.
 
 ## Tech Stack
 
